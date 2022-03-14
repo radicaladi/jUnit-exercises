@@ -27,4 +27,13 @@ public class StudentTest {
         Jarvis.addGrade(80);
         assertSame(80, Jarvis.getGrades().get(0));
     }
+
+    @Test
+    public void testGradeAverage() {
+        Student Odell = new Student(1303, "Odell");
+        Odell.addGrade(80);
+        Odell.addGrade(77);
+        Odell.addGrade(83);
+        assertEquals(80, Odell.getGradeAverage(), 0.2);
+    }
 }
