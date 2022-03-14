@@ -1,25 +1,45 @@
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class jUnitTests {
 
-    @Test // annotation for testing
-    public void testIfNameIsAdi() {
-        String expected = "Adi";
-        String actual = "Adi";
+    @Test
+    public void testStrings() {
+        String input = "Codeup";
+        String input2 = "CodeUp";
 
-        // testing if one arg is equal to another arg
-        assertEquals(expected, actual);
+//        assertEquals(input, input2);
+        assertNotEquals(input, input2);
     }
 
     @Test
-    public void testIfChangeIsCorrect() {
-        Double price = 10.0;
-        Double discount = 4.5;
+    public void testArrayLists() {
+        List languages = new ArrayList<>();
+        List moreLanguages = new ArrayList<>();
 
-        // what you expect with Math // The way to calc // Margin of error
-        assertEquals(5.0, price-discount, 0.5);
-        assertNotEquals(4.2, price-discount, 0.5);
+        assertNotSame(languages, moreLanguages);
+    }
+
+    @Test
+    public void testArrays() {
+        int[] numbers = {1, 2, 3};
+        int[] otherNumbers = new int[3];
+            otherNumbers[0] = 1; otherNumbers[1] = 2;
+            otherNumbers[2] = 3;
+
+        assertArrayEquals(numbers, otherNumbers);
+    }
+
+    @Test
+    public void testBooleans() {
+        String language = "PHP";
+        assertTrue(language.contains("H")); // use assertTrue for this statement
+        assertFalse(language.contains("J")); // use assertFalse for this statement
+
     }
 
 }
